@@ -4,7 +4,7 @@
 #
 Name     : R-bibtex
 Version  : 0.4.2
-Release  : 10
+Release  : 11
 URL      : https://cran.r-project.org/src/contrib/bibtex_0.4.2.tar.gz
 Source0  : https://cran.r-project.org/src/contrib/bibtex_0.4.2.tar.gz
 Summary  : Bibtex Parser
