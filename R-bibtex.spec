@@ -4,16 +4,14 @@
 #
 Name     : R-bibtex
 Version  : 0.4.2
-Release  : 14
+Release  : 15
 URL      : https://cran.r-project.org/src/contrib/bibtex_0.4.2.tar.gz
 Source0  : https://cran.r-project.org/src/contrib/bibtex_0.4.2.tar.gz
 Summary  : Bibtex Parser
 Group    : Development/Tools
 License  : GPL-2.0+
-Requires: R-bibtex-lib
-Requires: R-stringi
-BuildRequires : R-stringi
-BuildRequires : clr-R-helpers
+Requires: R-bibtex-lib = %{version}-%{release}
+BuildRequires : buildreq-R
 
 %description
 # bibtex
@@ -35,11 +33,11 @@ export http_proxy=http://127.0.0.1:9/
 export https_proxy=http://127.0.0.1:9/
 export no_proxy=localhost,127.0.0.1,0.0.0.0
 export LANG=C
-export SOURCE_DATE_EPOCH=1523290867
+export SOURCE_DATE_EPOCH=1552718272
 
 %install
+export SOURCE_DATE_EPOCH=1552718272
 rm -rf %{buildroot}
-export SOURCE_DATE_EPOCH=1523290867
 export LANG=C
 export CFLAGS="$CFLAGS -O3 -flto -fno-semantic-interposition "
 export FCFLAGS="$CFLAGS -O3 -flto -fno-semantic-interposition "
@@ -74,8 +72,7 @@ export http_proxy=http://127.0.0.1:9/
 export https_proxy=http://127.0.0.1:9/
 export no_proxy=localhost,127.0.0.1,0.0.0.0
 export _R_CHECK_FORCE_SUGGESTS_=false
-R CMD check --no-manual --no-examples --no-codoc -l %{buildroot}/usr/lib64/R/library bibtex|| : 
-cp ~/.stash/* %{buildroot}/usr/lib64/R/library/*/libs/ || :
+R CMD check --no-manual --no-examples --no-codoc  bibtex || :
 
 
 %files
@@ -118,8 +115,10 @@ cp ~/.stash/* %{buildroot}/usr/lib64/R/library/*/libs/ || :
 /usr/lib64/R/library/bibtex/html/R.css
 /usr/lib64/R/library/bibtex/include/bibparse.h
 /usr/lib64/R/library/bibtex/include/bibtex.h
-/usr/lib64/R/library/bibtex/libs/symbols.rds
 /usr/lib64/R/library/bibtex/objects.output
+/usr/lib64/R/library/bibtex/tests/testthat.R
+/usr/lib64/R/library/bibtex/tests/testthat/test-authors.R
+/usr/lib64/R/library/bibtex/tests/testthat/test-bibtex.R
 
 %files lib
 %defattr(-,root,root,-)
