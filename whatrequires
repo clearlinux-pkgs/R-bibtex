@@ -1,8 +1,6 @@
 # This file contains recursive sources that require this package
-R-NMF
 R-Rdpack
 R-blockmodeling
-R-doRNG
 R-gbutils
 R-pkgmaker
 R-rngtools

@@ -4,18 +4,18 @@
 #
 Name     : R-bibtex
 Version  : 0.4.2
-Release  : 23
+Release  : 24
 URL      : https://cran.r-project.org/src/contrib/bibtex_0.4.2.tar.gz
 Source0  : https://cran.r-project.org/src/contrib/bibtex_0.4.2.tar.gz
 Summary  : Bibtex Parser
 Group    : Development/Tools
 License  : GPL-2.0+
 Requires: R-bibtex-lib = %{version}-%{release}
-Requires: R-stringi
 Requires: R-stringr
 BuildRequires : R-stringi
 BuildRequires : R-stringr
 BuildRequires : buildreq-R
+BuildRequires : util-linux
 
 %description
 # bibtex
@@ -37,10 +37,10 @@ export http_proxy=http://127.0.0.1:9/
 export https_proxy=http://127.0.0.1:9/
 export no_proxy=localhost,127.0.0.1,0.0.0.0
 export LANG=C.UTF-8
-export SOURCE_DATE_EPOCH=1562444098
+export SOURCE_DATE_EPOCH=1571801938
 
 %install
-export SOURCE_DATE_EPOCH=1562444098
+export SOURCE_DATE_EPOCH=1571801938
 rm -rf %{buildroot}
 export LANG=C.UTF-8
 export CFLAGS="$CFLAGS -O3 -flto -fno-semantic-interposition "
