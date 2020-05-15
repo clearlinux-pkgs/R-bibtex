@@ -4,7 +4,7 @@
 #
 Name     : R-bibtex
 Version  : 0.4.2.2
-Release  : 29
+Release  : 30
 URL      : https://cran.r-project.org/src/contrib/bibtex_0.4.2.2.tar.gz
 Source0  : https://cran.r-project.org/src/contrib/bibtex_0.4.2.2.tar.gz
 Summary  : Bibtex Parser
@@ -29,21 +29,22 @@ lib components for the R-bibtex package.
 
 %prep
 %setup -q -c -n bibtex
+cd %{_builddir}/bibtex
 
 %build
 export http_proxy=http://127.0.0.1:9/
 export https_proxy=http://127.0.0.1:9/
 export no_proxy=localhost,127.0.0.1,0.0.0.0
 export LANG=C.UTF-8
-export SOURCE_DATE_EPOCH=1578159200
+export SOURCE_DATE_EPOCH=1589583337
 
 %install
-export SOURCE_DATE_EPOCH=1578159200
+export SOURCE_DATE_EPOCH=1589583337
 rm -rf %{buildroot}
 export LANG=C.UTF-8
 export CFLAGS="$CFLAGS -O3 -flto -fno-semantic-interposition "
-export FCFLAGS="$CFLAGS -O3 -flto -fno-semantic-interposition "
-export FFLAGS="$CFLAGS -O3 -flto -fno-semantic-interposition "
+export FCFLAGS="$FFLAGS -O3 -flto -fno-semantic-interposition "
+export FFLAGS="$FFLAGS -O3 -flto -fno-semantic-interposition "
 export CXXFLAGS="$CXXFLAGS -O3 -flto -fno-semantic-interposition "
 export AR=gcc-ar
 export RANLIB=gcc-ranlib
